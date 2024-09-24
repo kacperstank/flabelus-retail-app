@@ -1,3 +1,5 @@
+<img src="assets/icon.png" alt="Flabelus Icon" width="200px">
+
 # Flabelus Retail App (Android Only for Now)
 
 The **Flabelus Retail App** is a personal project designed specifically for the retail stores of the Spanish shoe company, Flabelus. While this app is unofficial and not currently in use by the company, it serves as a practical tool for managing store inventories, with a focus on enhancing sales processes. 
