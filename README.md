@@ -3,6 +3,7 @@
 <p align="center">
     <img src="https://img.shields.io/badge/Frontend-Kotlin-blue.svg" alt="Frontend: Kotlin">
     <img src="https://img.shields.io/badge/Backend-Django-green.svg" alt="Backend: Django">
+    <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0">
 </p>
 
 ## Description
@@ -20,6 +21,16 @@ Although not officially adopted by Flabelus, this app showcases my passion for t
 
 An **initial version** of the app featuring core functionalities is expected to be released in the near future.
 
+## Disclaimer
+
+This repository includes selected files to showcase the app’s design, architecture, and core features. Sensitive files such as API integrations, database operations, and other proprietary logic have been excluded to protect security and intellectual property.
+
+The provided files highlight the UI and example Kotlin implementations, demonstrating my approach to scalable app development.
+
+This app is an independent personal project and is not officially endorsed by or affiliated with Flabelus. It was created to reflect my passion for developing real-world business solutions and my admiration for Flabelus shoes.
+
 ## License
 
-This project is under a Proprietary License and is not open for modification or distribution at this time. The full license will be added once the project progresses.
+This project is licensed under the [Apache License 2.0](LICENSE). You are free to use, modify, and distribute the code, provided you comply with the terms of the license, including attribution.
+
+Please note that sensitive files have been excluded from this repository for security and intellectual property reasons. See the **Disclaimer** section for more details.
