@@ -14,8 +14,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 DEBUG = True #! Temp, swith to False for production.
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
-
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
 
 # Application definition
 
