@@ -1,33 +1,42 @@
-# Gradle files
+# macOS-specific files
+.DS_Store
+
+# Python/Django exclusions
+__pycache__/
+*.py[cod]
+*.log
+.venv/
+env/
+db.sqlite3
+*.sqlite3
+*.py~
+
+# Android/Java exclusions
+.idea/
 .gradle/
 build/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
-*.log
-
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.apk
-output.json
-
-# IntelliJ
 *.iml
-.idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
 
-# Keystore files
-*.jks
-*.keystore
+# Secrets and environment files
+*.env
+*.key
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
+# Node.js/Frontend (if applicable)
+node_modules/
+dist/
 
-# Android Profiling
-*.hprof
+# General backup files
+*.swp
+*.bak
+*.tmp
+*.old
+
+# Ignore local configuration files
+*.local
+*.config
+
+# Ignore test coverage reports
+coverage/
+*.cover
+
+*.env
