@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import (
+from catalog.models import (
     Role, User, Region, Store, UserStore, Category, Product,
     ShoeDetail, EarringDetail, ShoeStock, EarringStock, Tag,
     ProductTag, Sale, SaleItem
