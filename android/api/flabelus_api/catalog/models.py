@@ -151,6 +151,7 @@ class Product(models.Model):
     )  # Reference to the category
     description = models.TextField(blank=True, null=True)  # General description
     image = models.TextField(blank=True, null=True)  # Optional path or URL to the product's main image
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     created_at = models.DateTimeField(auto_now_add=True)  # Automatically set timestamp on creation
 
     class Meta:
@@ -158,6 +159,7 @@ class Product(models.Model):
         indexes = [
             models.Index(fields=["name"], name="idx_products_name"),  # Index for name-based lookups
             models.Index(fields=["category"], name="idx_products_category_id"),  # Index for category lookups
+            models.Index(fields=["price"], name="idx_products_price"),  # Index for price lookups
             models.Index(fields=["created_at"], name="idx_products_created_at"),  # Index for time-based queries
         ]
         verbose_name_plural = "Products"
