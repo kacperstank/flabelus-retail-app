@@ -66,6 +66,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_login = models.DateTimeField(blank=True, null=True)  # Last login timestamp
     is_active = models.BooleanField(default=True)  # Required by AbstractBaseUser
     is_staff = models.BooleanField(default=False)  # Required by Django admin
+    is_superuser = models.BooleanField(default=False) # Required by Django
 
     # Required fields for Django's custom user model
     USERNAME_FIELD = "username"  # Field used for authentication
