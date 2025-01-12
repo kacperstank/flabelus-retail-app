@@ -30,9 +30,16 @@ class LoginView(APIView):
 
         # TODO: Add rate limiting
         """
+        # Log received data
+        print("Hey")
+        print(f"Received request data: {request.data}")
+
         # Extract username and password from the request data
         username = request.data.get('username')
         password = request.data.get('password')
+
+        # Log the extracted values
+        print(f"Extracted username: {username}, password: {password}")
 
         # Validate that both username and password are provided
         if not username or not password:
