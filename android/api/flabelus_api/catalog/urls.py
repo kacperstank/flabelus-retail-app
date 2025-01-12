@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from rest_framework.routers import DefaultRouter
 from django.urls import path, include
-from .views import (
+from .views.default import (
     RoleViewSet, UserViewSet, RegionViewSet, StoreViewSet,
     UserStoreViewSet, CategoryViewSet, ProductViewSet,
     ShoeDetailViewSet, EarringDetailViewSet, ShoeStockViewSet,

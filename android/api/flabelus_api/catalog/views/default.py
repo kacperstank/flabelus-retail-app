@@ -1,15 +1,21 @@
-from rest_framework import viewsets
-from .models import (
+from django.contrib.auth import authenticate
+from django.utils.timezone import now
+from rest_framework import viewsets, status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from catalog.models import (
     Role, User, Region, Store, UserStore, Category, Product,
     ShoeDetail, EarringDetail, ShoeStock, EarringStock, Tag,
     ProductTag, Sale, SaleItem
 )
-from .serializers import (
+from catalog.serializers import (
     RoleSerializer, UserSerializer, RegionSerializer, StoreSerializer,
     UserStoreSerializer, CategorySerializer, ProductSerializer, ShoeDetailSerializer,
     EarringDetailSerializer, ShoeStockSerializer, EarringStockSerializer, TagSerializer,
     ProductTagSerializer, SaleSerializer, SaleItemSerializer
 )
+from catalog.serializers.login import UserLoginSerializer
 
 
 class RoleViewSet(viewsets.ModelViewSet):
@@ -130,3 +136,49 @@ class SaleItemViewSet(viewsets.ModelViewSet):
     """
     queryset = SaleItem.objects.all()
     serializer_class = SaleItemSerializer
+
+class LoginView(APIView):
+    """
+    API view to handle user login.
+    """
+
+    def post(self, request):
+        # Extract username and password from the request data
+        username = request.data.get('username')
+        password = request.data.get('password')
+
+        if not username or not password:
+            return Response(
+                {'error': 'Username and password are required.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Authenticate the user
+        user = authenticate(username=username, password=password)
+
+        if user:
+            # Update last login timestamp
+            user.last_login = now()
+            user.save()
+
+            # Serialize user data
+            user_data = UserLoginSerializer(user).data
+
+            # Get associated stores
+            stores = Store.objects.filter(userstore__user=user)
+            store_data = StoreSerializer(stores, many=True).data
+
+            # Prepare and return the response
+            return Response(
+                {
+                    'user': user_data,
+                    'stores': store_data,
+                },
+                status=status.HTTP_200_OK
+            )
+        else:
+            # Authentication failed
+            return Response(
+                {'error': 'Invalid username or password.'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
