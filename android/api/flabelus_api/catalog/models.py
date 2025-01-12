@@ -1,4 +1,4 @@
-from django.contrib.auth.base_user import BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 
 class Role(models.Model):
@@ -27,6 +27,7 @@ class UserManager(BaseUserManager):
         """
         if not username:
             raise ValueError("The username field is required.")
+        extra_fields.setdefault("is_active", True)  # Default to active user
         user = self.model(username=username, **extra_fields)
         user.set_password(password)  # Hash the password
         user.save(using=self._db)
@@ -46,9 +47,10 @@ class UserManager(BaseUserManager):
 
         return self.create_user(username, password, **extra_fields)
 
-class User(models.Model):
+
+class User(AbstractBaseUser, PermissionsMixin):
     """
-    Stores system users, including login credentials and roles.
+    Custom user model for system users, including login credentials and roles.
     """
     id = models.AutoField(primary_key=True)  # Auto-incrementing primary key
     username = models.CharField(max_length=50, unique=True)  # Unique login username
@@ -62,6 +64,14 @@ class User(models.Model):
     profile_picture = models.TextField(blank=True, null=True)  # Optional profile picture URL
     created_at = models.DateTimeField(auto_now_add=True)  # Automatically set on creation
     last_login = models.DateTimeField(blank=True, null=True)  # Last login timestamp
+    is_active = models.BooleanField(default=True)  # Required by AbstractBaseUser
+    is_staff = models.BooleanField(default=False)  # Required by Django admin
+
+    # Required fields for Django's custom user model
+    USERNAME_FIELD = "username"  # Field used for authentication
+    REQUIRED_FIELDS = ["email"]  # Fields required during superuser creation
+
+    objects = UserManager()  # Assign the custom manager
 
     class Meta:
         db_table = "users"  # Explicit table name to match SQL schema
