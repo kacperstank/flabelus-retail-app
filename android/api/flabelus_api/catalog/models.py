@@ -81,6 +81,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         ]
         verbose_name_plural = "Users"  # Display name in admin interface
 
+    def save(self, *args, **kwargs):
+        # Ensure the password is hashed before saving
+        if self.pk and not self.password.startswith("pbkdf2_"):
+            self.set_password(self.password)
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.username
 
