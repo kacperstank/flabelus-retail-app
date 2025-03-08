@@ -1,4 +1,4 @@
-# International Retail Management App for Flabelus
+# International Retail Management App for Flabelus 🩷
 <!-- Centered badges -->
 <p align="center">
     <img src="https://img.shields.io/badge/Frontend-Kotlin-blue.svg" alt="Frontend: Kotlin">
@@ -6,20 +6,56 @@
     <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0">
 </p>
 
-## Description
+---
+
+## 🛍️ **What is it?**
+
 <p align="center">
-Android application used as a scalable business solution for the retail stores of Flabelus, a rapidly growing international shoe company based in Madrid. 
-The app aims to enhance operational flexibility while preserving Flabelus’ recognized brand identity.
-<br><br>
-This app efficiently manages inventory for shoes and apparel across multiple stores and regions. Each store maintains its own employees, stock levels, and regional settings, accommodating different user roles such as store clerks or regional managers.
-Designed with scalability from the beginning, the app is prepared for the eventual addition of new stores and product categories, supporting the continuous global expansion of the company.
-<br><br>
-Although not officially adopted by Flabelus, this app showcases my passion for their products and my dedication to developing real-world business solutions beyond just coding.
+<b>Android app developed as a scalable business solution</b> for the retail stores of <b>Flabelus</b>, a rapidly growing international shoe company based in Madrid. 🩰
 </p>
 
-## Current Status
+✅ **Manages inventory** for shoes and apparel across multiple stores & regions. ✈️  
+✅ **Each store has its own** employees (with login access), stock levels, and regional settings.  
+✅ **Distinct user roles**: Store clerks, regional managers, and more. 🤵🏼‍♀️  
+✅ **Tracks store performance & employee activity** with built-in statistics. 📈  
+✅ **Built for scalability**, supporting new stores & product categories as Flabelus expands. 🌍  
 
-An **initial version** of the app featuring core functionalities is expected to be released in the near future.
+<i>Although <b>not officially adopted by Flabelus</b>, this app showcases my passion for their products and my dedication to developing real-world business solutions beyond just coding.</i>
+
+---
+
+## 🤔 **Why This Project?**
+Flabelus has grown from a **single store in Madrid** to an **international brand**, requiring a **scalable solution** for store management.  
+
+✨ **What makes this app unique?**  
+✔ **Blends Flabelus’ colors** with **Material 3** for a premium UI.  
+✔ **Designed to integrate with Shopify** (future plans) while fully functional as a standalone system.  
+
+---
+
+## 📊 Project status
+### **📡 Backend (Django API)**
+✅ **Database structure ready**, with implemented API endpoints (some still planned).  
+✅ **Previously deployed on Render, now transitioning to local testing.**  
+✅ **Ongoing development**, with refinements & additional endpoints in progress.  
+
+### **📱 Frontend (Android App)**
+✅ **Connected to the local API**, with endpoints structured around app flow.  
+✅ **UI is being redesigned from scratch in Figma, ensuring a polished Material 3 experience.**  
+✅ **Currently collecting assets & preparing for full implementation.**  
+
+---
+
+## 📷 **Sneak Peek: Navigation Bar Prototype**
+A **first look** at the bottom navigation bar!  
+🛠️ **Work in progress:** The icons and styling might change, but this gives an idea of the **Material 3 approach** the app is taking!  
+🔤 The **selected item should be bold**, but this is still under development.
+
+<p align="center">
+  <img src="assets/screenshots/early_navbar_preview.png" width="600">
+</p>
+
+---
 
 ## Disclaimer
 
@@ -27,7 +63,10 @@ This repository includes selected files to showcase the app’s design, architec
 
 The provided files highlight the UI and example Kotlin implementations, demonstrating my approach to scalable app development.
 
-This app is an independent personal project and is not officially endorsed by or affiliated with Flabelus. It was created to reflect my passion for developing real-world business solutions and my admiration for Flabelus shoes.
+⚠️ Asset Attribution: <br>
+Some assets used in this project, including logos, brand elements, and certain design assets, are the property of Flabelus. These materials are used solely for demonstration purposes to maintain brand consistency within the app’s design. I do not claim ownership of these assets, nor is this project officially affiliated with or endorsed by Flabelus.
+
+For any inquiries or concerns regarding the use of these assets, feel free to contact me.
 
 ## License
 
